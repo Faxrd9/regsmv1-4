@@ -32,25 +32,9 @@ V4 默认已经去掉 runtime router / selector / merger
 ## 模型版本
 
 ### V1
-
-文件：
-
-- `regsm/regsm.py`
-- `train.py`
-- `train_v2.py`
-- `train_v3.py`
-
 早期探索版本，主要是围绕 ReGSM 的基础结构、训练流程和符号追踪任务做实验。
 
 ### V2
-
-文件：
-
-- `regsm/regsm_v2.py`
-- `train_select_v2.py`
-- `train_text_v2.py`
-- `generate_text_v2.py`
-
 V2 重点尝试 selector / router / branch。  
 核心问题是 selector 容易追着短期最优 branch 跑，导致分支没有稳定分工。
 
@@ -64,13 +48,6 @@ selector 只模仿 oracle
 这个实验显示：如果 oracle 能显著强于普通 selector，说明 selector 选错路是核心问题之一。
 
 ### V3
-
-文件：
-
-- `regsm/regsm_v3.py`
-- `train_merge_v3.py`
-- `diagnose_merge_v3.py`
-
 V3 尝试 split-think-merge：
 
 ```text
@@ -84,15 +61,6 @@ V3 尝试 split-think-merge：
 但继续消融后发现，多分支本身也不是稳定关键。
 
 ### V4
-
-文件：
-
-- `regsm/regsm_v4.py`
-- `train_primary_v4.py`
-- `eval_primary_v4.py`
-- `train_text_v4.py`
-- `generate_text_v4.py`
-
 V4 是目前最干净的版本。默认结构已经不是多分支选择，而是：
 
 ```text
